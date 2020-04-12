@@ -1,0 +1,27 @@
+
+<div class="container">
+    <br>
+    <h2>Historical Data</h2>
+    <table class="table">
+          <tr>
+            <th >Currency</th>
+            <th >Jan</th>
+            <th >Feb</th>
+            <th >Mar</th>
+            <th >Apr</th>
+            <th >May</th>
+          </tr>
+        <tbody>
+          <tr *ngFor="let currency of currencyHistoricalData">
+            <td>{{currency.currency}}</td>
+            <td>{{currency.month1}}</td>
+            <td>{{currency.month2}}</td>
+            <td>{{currency.month3}}</td>
+            <td>{{currency.month4}}</td>
+            <td>{{currency.month5}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+  
+  
