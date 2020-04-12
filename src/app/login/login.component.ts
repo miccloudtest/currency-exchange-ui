@@ -12,12 +12,14 @@ export class LoginComponent implements OnInit {
   username:string="";
   password:string="";
   validUser:Boolean=false;
+  invalidUser=false;
+  invalidLoginMsg="Please Enter Valid Username and Password!"
   @ViewChild('f', {static: true}) loginForm:NgForm;
   constructor(private router:Router) { }
 
   ngOnInit() {
-    sessionStorage.setItem("username","Admin");
-    sessionStorage.setItem("password","Admin");
+    sessionStorage.setItem("username","HdFctest");
+    sessionStorage.setItem("password","Roman@123#");
   }
   onSubmit(form:NgForm){
 
@@ -26,6 +28,9 @@ export class LoginComponent implements OnInit {
     if(this.validateUser()){
       this.router.navigate(['currencydata']);
       this.isLoggedIn=true;
+    }
+    else{
+      this.invalidUser=true;
     }
 
   }
